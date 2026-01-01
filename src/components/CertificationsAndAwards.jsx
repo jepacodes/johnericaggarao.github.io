@@ -56,9 +56,16 @@ const certifications = [
 
 function CertificationsAndAwards() {
   const [imageErrors, setImageErrors] = useState({})
+  const baseUrl = import.meta.env.BASE_URL
 
   const handleImageError = (index) => {
     setImageErrors(prev => ({ ...prev, [index]: true }))
+  }
+
+  const getImagePath = (imagePath) => {
+    // Remove leading slash and add base URL
+    const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath
+    return `${baseUrl}${cleanPath}`
   }
 
   return (
@@ -76,7 +83,7 @@ function CertificationsAndAwards() {
               <div className="md:w-1/3">
                 {!imageErrors[index] ? (
                   <img
-                    src={cert.image}
+                    src={getImagePath(cert.image)}
                     alt={cert.title}
                     className="w-full h-auto rounded shadow-sm"
                     onError={() => handleImageError(index)}
