@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-black font-sans;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    background-image: none !important;
+  }
+  
+  header,
+  nav,
+  button:not(.print-keep) {
+    display: none !important;
+  }
+  
+  .print-keep {
+    display: block !important;
+  }
+}
+
+

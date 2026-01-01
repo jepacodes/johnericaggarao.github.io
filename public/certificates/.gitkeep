@@ -1,0 +1,8 @@
+# This file ensures the certificates directory is tracked by git
+# Add your certificate images here with the following filenames:
+# - outstanding-contributor.jpg
+# - meralco-internship.jpg
+# - ibm-ml-python.jpg
+# - stanford-medicine.jpg
+# - up-cids-explainable-ai.jpg
+
